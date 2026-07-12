@@ -1,0 +1,178 @@
+{
+  "info": {
+    "_postman_id": "2b2d50bc-69e2-4b72-b425-560fc0400688",
+    "name": "Quiz App Api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56553027",
+    "_collection_link": "https://go.postman.co/collection/56553027-2b2d50bc-69e2-4b72-b425-560fc0400688?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get All Questions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/question/allQuestions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "question",
+            "allQuestions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Question",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 31,\r\n  \"category\": \"Java\",\r\n  \"difficultylevel\": \"Easy\",\r\n  \"questionTitle\": \"Which keyword is used to inherit a class?\",\r\n  \"option1\": \"implements\",\r\n  \"option2\": \"extends\",\r\n  \"option3\": \"super\",\r\n  \"option4\": \"this\",\r\n  \"rightAnswer\": \"extends\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/question/add?Content-Type=application/json",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "question",
+            "add"
+          ],
+          "query": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Quiz",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/quiz/create?category=Java&numQ=5&title=Java Quiz",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "quiz",
+            "create"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "Java"
+            },
+            {
+              "key": "numQ",
+              "value": "5"
+            },
+            {
+              "key": "title",
+              "value": "Java Quiz"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Quiz",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/quiz/get/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "quiz",
+            "get",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Submit Quiz",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": " application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[\r\n  {\r\n    \"id\": 1,\r\n    \"response\": \"extends\"\r\n  },\r\n  {\r\n    \"id\": 4,\r\n    \"response\": \"throw\"\r\n  },\r\n  {\r\n    \"id\": 7,\r\n    \"response\": \"JVM\"\r\n  },\r\n  {\r\n    \"id\": 9,\r\n    \"response\": \"HashMap\"\r\n  },\r\n  {\r\n    \"id\": 10,\r\n    \"response\": \"Object\"\r\n  }\r\n]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/quiz/submit/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "quiz",
+            "submit",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Questions By Category",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "GET http://localhost:8080/question/category/Java",
+          "protocol": "GET http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "question",
+            "category",
+            "Java"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
